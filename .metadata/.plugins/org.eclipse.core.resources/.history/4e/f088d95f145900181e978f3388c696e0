@@ -1,0 +1,12 @@
+package io.airfast.airfastcatalogservice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class AirfastCatalogServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(AirfastCatalogServiceApplication.class, args);
+	}
+}

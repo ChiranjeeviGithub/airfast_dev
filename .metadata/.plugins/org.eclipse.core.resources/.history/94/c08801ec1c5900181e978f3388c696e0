@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package io.airfast.airfastcatalogclient;
+
+/**
+ * @author 677644
+ *
+ */
+@RestController
+public class CatalogClientController {
+
+	@RequestMapping("/addItem")
+	public String addItem(){
+		
+		// call the Catalog service 
+	}
+}

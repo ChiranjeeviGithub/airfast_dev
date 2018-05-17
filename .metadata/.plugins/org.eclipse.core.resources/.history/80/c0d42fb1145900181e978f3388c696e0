@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+package io.airfast.catalog.contoller;
+
+/**
+ * @author 677644
+ *
+ */
+@RestContoller
+public class CatalogItemController {
+
+}

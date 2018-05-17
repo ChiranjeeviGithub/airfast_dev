@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package io.airfast.catalog.contoller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @author 677644
+ *
+ */
+@RestController
+public class CatalogItemController {
+
+	@RequestMapping("/addCartItem")
+	public String addCartItem(){
+		System.out.println("Method /addCartItem");
+		return "Cart item is sucessfull";
+	}
+}

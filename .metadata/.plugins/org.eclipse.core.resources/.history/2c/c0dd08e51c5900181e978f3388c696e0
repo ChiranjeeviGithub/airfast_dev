@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package io.airfast.airfastcatalogclient;
+
+/**
+ * @author 677644
+ *
+ */
+public class CatalogClientController {
+
+}

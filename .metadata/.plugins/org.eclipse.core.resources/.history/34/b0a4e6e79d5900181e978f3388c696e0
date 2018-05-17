@@ -1,0 +1,42 @@
+/**
+ * 
+ */
+package io.airfast.airfastcatalogclient;
+
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.netflix.appinfo.InstanceInfo;
+import com.netflix.discovery.EurekaClient;
+
+/**
+ * @author 677644
+ *
+ */
+@RestController
+public class CatalogClientController {
+
+	@Autowired
+	private EurekaClient client;
+	
+	@Autowired
+	private RestTemplateBuilder restTemplateBuilder;
+	
+	@RequestMapping("/")
+	public String addItem(){
+
+		RestTemplate restTemplate = restTemplateBuilder.build();
+		InstanceInfo instanceInfo = client.getNextServerFromEureka("airfast-catalog-service", false);
+		String baseUrl = instanceInfo.getHomePageUrl();
+		System.out.println("base Url "+baseUrl);
+		ResponseEntity<String>  respone = restTemplate.exchange(baseUrl, HttpMethod.GET, null, String.class);
+		return respone.getBody();
+	}
+}
